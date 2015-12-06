@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Front Page of the Interweb</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src='app.js'></script>
+
+  </head>
+  <body ng-app='myReddit' ng-controller='MainCtrl'>
+
+    <h1>myReddit</h1>
+
+    <div ng-repeat="post in posts | orderBy: '-score'">
+      <span ng-click='upVote(post)' class='button-upvote'>^</span>
+      <span ng-click='downVote(post)' class='button-downvote'>x</span>
+
+      score: {{post.score}}: {{post.title}}
+    </div>
+
+    <form ng-submit='addPost()'>
+      <input type="text" ng-model='title' placeholder="title"></input>
+      <button type='submit'>Post</button>
+    </form>
+
+
+  </body>
+</html>
