@@ -1,10 +1,15 @@
+'use strict';
 
-angular.module('myReddit', [])
-  .controller('MainCtrl', [
+/* Controllers */
+
+var angularControllers = angular.module('angularControllers', [])
+
+angularControllers.controller('MainCtrl', [
     '$scope',
+    // 'posts',
     function($scope) {
-      $scope.test = 'Test String';
 
+      // $scope.posts = posts.posts
       $scope.posts = [
         {title: 'post 1', score: 5},
         {title: 'post 2', score: 2},
@@ -14,8 +19,9 @@ angular.module('myReddit', [])
       ]
 
       $scope.addPost = function(){
-        if (!$scope.title || $scope.title == '') { return ;}
         
+        if (!$scope.title || $scope.title == '') { return ;}
+
         $scope.posts.push({
           title: $scope.title,
           link: $scope.link,
