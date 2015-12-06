@@ -15,8 +15,14 @@ angular.module('myReddit', [])
 
       $scope.addPost = function(){
         if (!$scope.title || $scope.title == '') { return ;}
-        $scope.posts.push({title: $scope.title, score: 0});
+        
+        $scope.posts.push({
+          title: $scope.title,
+          link: $scope.link,
+          score: 0
+        });
         $scope.title='';
+        $scope.link='';
       }
 
       $scope.upVote = function(post) {

@@ -3,26 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>The Front Page of the Interweb</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
     <script src='app.js'></script>
+    <style media="screen">
+
+    </style>
 
   </head>
   <body ng-app='myReddit' ng-controller='MainCtrl'>
 
-    <h1>myReddit</h1>
+    <header class='header'>
+      <nav class='header-nav group'>
+        <h1 class='header-logo'>myReddit</h1>
 
-    <div ng-repeat="post in posts | orderBy: '-score'">
-      <span ng-click='upVote(post)' class='button-upvote'>^</span>
-      <span ng-click='downVote(post)' class='button-downvote'>x</span>
+      </nav>
+    </header>
 
-      score: {{post.score}}: {{post.title}}
-    </div>
+    <main class='content group'>
 
-    <form ng-submit='addPost()'>
-      <input type="text" ng-model='title' placeholder="title"></input>
-      <button type='submit'>Post</button>
-    </form>
+      <div class="content-main">
 
+        <div ng-repeat="post in posts | orderBy: '-score'">
+
+          <div class="link-element group">
+
+            <div class="link-score-display">
+              <span ng-click='upVote(post)' class='button-upvote'></span>
+                <span class='link-score'>{{post.score}}</span>
+              <span ng-click='downVote(post)' class='button-downvote'></span>
+            </div>
+
+            <div class="link-content">
+              <a ng-show='post.link' href="{{post.link}}">{{post.title}}</a>
+              <span ng-hide='post.link'>{{post.title}}</span>
+            </div>
+
+          </div>
+        </div>
+
+        <form ng-submit='addPost()'>
+          <input type="text" ng-model='title' placeholder="type title"></input>
+          <input type="text" ng-model='link' placeholder="paste link"></input>
+          <button type='submit'>Post</button>
+        </form>
+
+      </div>
+    </main>
 
   </body>
 </html>
