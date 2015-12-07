@@ -25,7 +25,13 @@ angularControllers.controller('MainCtrl', [
         $scope.posts.push({
           title: $scope.title,
           link: $scope.link,
-          score: 0
+          score: 0,
+
+          comments: [
+            {author: 'alpha', body: 'comment1!', score: 0},
+            {author: 'bravo', body: 'comment2?', score: 0}
+          ]
+
         });
         $scope.title='';
         $scope.link='';
@@ -40,5 +46,13 @@ angularControllers.controller('MainCtrl', [
       }
     }
 
-
   ]);
+
+angularControllers.controller('PostsCtrl', [
+  '$scope',
+  '$stateParams',
+  'posts',
+  function($scope, $stateParams, posts){
+    $scope.post = posts.posts[$stateParams.id]
+  }
+])

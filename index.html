@@ -46,6 +46,10 @@
               <span ng-hide='post.link'>{{post.title}}</span>
             </div>
 
+            <div class="link-comments">
+              <a href="#/posts/{{$index}}">Comments</a>
+            </div>
+
           </div>
         </div>
 
@@ -59,5 +63,23 @@
     </main>
 
     </script>
+
+    <script type="text/ng-template" id="/posts.html"> 
+      <div class="page-header">
+        <a ng-show='post.link' href="{{post.link}}">{{post.title}}</a>
+        <span ng-hide='post.link'>{{post.title}}</span>
+      </div>
+
+      <div class="page-comments" ng-repeat="comment in post.comments | orderBy: '-score'">
+        <span class='glyphicon glyphicon-thumbs-up' ng-click="upVote(comment)">
+        </span>
+        {{comment.score}} - by {{comment.author}}
+        <span class='comment-body'>
+          {{comment.body}}
+        </span>
+      </div>
+
+    </script>
+
   </body>
 </html>
