@@ -8,16 +8,19 @@ var myReddit = angular.module('myReddit', [
   'angularServices'
 ]);
 
-myReddit.config([
-  '$stateProvider',
-  '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider){
-  $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'index.html',
-      controller: 'MainCtrl'
-    });
 
-  $urlRouterProvider.otherwise('home');
-}])
+myReddit
+  .config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider){
+      $stateProvider
+        .state('home', {
+          url: '/home',
+          templateUrl: '/home.html',
+          controller: 'MainCtrl'
+        });
+
+      $urlRouterProvider.otherwise('home');
+    }
+  ])

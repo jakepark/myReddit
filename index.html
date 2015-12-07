@@ -5,8 +5,7 @@
     <title>The Front Page of the Interweb</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
     <script src='public/vendor/angular-ui-router/angular-ui-router.min.js'></script>
 
     <script src='js/app.js'></script>
@@ -15,7 +14,11 @@
 
 
   </head>
-  <body>
+  <body ng-app="myReddit">
+
+    <ui-view></ui-view>
+
+    <script type="text/ng-template" id="/home.html">
 
     <header class='header'>
       <nav class='header-nav group'>
@@ -55,5 +58,6 @@
       </div>
     </main>
 
+    </script>
   </body>
 </html>
