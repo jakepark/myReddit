@@ -75,15 +75,33 @@
         <span ng-hide='post.link'>{{post.title}}</span>
       </div>
 
-      <div class="page-comments" ng-repeat="comment in post.comments | orderBy: '-score'">
-        <span class='glyphicon glyphicon-thumbs-up' ng-click="upVote(comment)">
-        </span>
-        {{comment.score}} - by {{comment.author}}
-        <span class='comment-body'>
+      <div class="page-comments group" ng-repeat="comment in post.comments | orderBy: '-score'">
+        <div class="link-score-display">
+          <span ng-click='upVote(comment)' class='button-upvote'></span>
+          <span ng-click='downVote(comment)' class='button-downvote'></span>
+        </div>
+
+        <div class="comment-title">
+          <span class='comment-author'> {{comment.author}} </span>
+          <span class='comment-score'> [{{comment.score}}] </span>
+          
+        </div>
+
+        <div class='comment-body'>
           {{comment.body}}
-        </span>
+        </div>
       </div>
 
+      <form ng-submit='addComment()'>
+        <h3>Add a new comment</h3>
+
+        <div class="comment-form">
+          <input type="text" ng-model="body" class="comment-form-input"
+            placeholder="Comment"></input>
+
+          <button type="submit">Comment</button>
+        </div>
+      </form>
     </script>
 
   </body>

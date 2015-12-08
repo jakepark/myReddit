@@ -260,6 +260,11 @@ img {
   color: blue;
 }
 
+
+.comment-author {
+  color: blue;
+}
+
 .button-upvote:before {
   content: "";
   background-image: url('../assets/sprite-reddit.png');
