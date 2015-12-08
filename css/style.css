@@ -57,7 +57,7 @@ img {
 /* --- HEADER --- */
 
 .header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid blue;
   background-color: #cee3f8;
   font-size: 24px;
 }
@@ -74,6 +74,8 @@ img {
 
 .header-logo {
   float: left;
+  font-size: 36px;
+  margin: 15px 0 0 0;
 }
 
 .header-list {
@@ -256,6 +258,7 @@ img {
 .link-content {
   float: left;
   margin: 23px 0 23px 10px;
+  color: blue;
 }
 
 .button-upvote:before {

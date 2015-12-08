@@ -23,6 +23,8 @@ angularControllers.controller('MainCtrl', [
         if (!$scope.title || $scope.title == '') { return ;}
 
         $scope.posts.push({
+          author: "testuser",
+          date: 1,
           title: $scope.title,
           link: $scope.link,
           score: 0,

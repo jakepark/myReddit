@@ -2,14 +2,14 @@
 
 /* App Module */
 
-var myReddit = angular.module('myReddit', [
+var myreddit = angular.module('myreddit', [
   'ui.router',
   'angularControllers',
   'angularServices'
 ]);
 
 
-myReddit
+myreddit
   .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -20,7 +20,7 @@ myReddit
           templateUrl: '/home.html',
           controller: 'MainCtrl'
         });
-        
+
       $stateProvider
         .state('posts', {
           url: '/posts/{id}',

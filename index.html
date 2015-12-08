@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='myReddit' >
+<html ng-app='myreddit' >
   <head>
     <meta charset="utf-8">
     <title>The Front Page of the Interweb</title>
@@ -14,7 +14,7 @@
 
 
   </head>
-  <body ng-app="myReddit">
+  <body ng-app="myreddit">
 
     <ui-view></ui-view>
 
@@ -22,7 +22,7 @@
 
     <header class='header'>
       <nav class='header-nav group'>
-        <h1 class='header-logo'>myReddit</h1>
+        <h1 class='header-logo'>myreddit</h1>
 
       </nav>
     </header>
@@ -43,11 +43,16 @@
 
             <div class="link-content">
               <a ng-show='post.link' href="{{post.link}}">{{post.title}}</a>
-              <span ng-hide='post.link'>{{post.title}}</span>
+              <div ng-hide='post.link'>{{post.title}}</div>
+            </div>
+
+
+            <div class="link-submitted">
+              submitted {{post.date}} ago by {{post.author}}
             </div>
 
             <div class="link-comments">
-              <a href="#/posts/{{$index}}">Comments</a>
+              <a href="#/posts/{{$index}}">{{post.comments.length}} comments</a>
             </div>
 
           </div>
@@ -64,7 +69,7 @@
 
     </script>
 
-    <script type="text/ng-template" id="/posts.html"> 
+    <script type="text/ng-template" id="/posts.html">
       <div class="page-header">
         <a ng-show='post.link' href="{{post.link}}">{{post.title}}</a>
         <span ng-hide='post.link'>{{post.title}}</span>
