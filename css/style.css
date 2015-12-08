@@ -256,8 +256,7 @@ img {
 }
 
 .link-content {
-  float: left;
-  margin: 23px 0 23px 10px;
+  text-transform: capitalize;
   color: blue;
 }
 
