@@ -40,7 +40,6 @@ angularControllers.controller('MainCtrl', [
       }
 
       $scope.upVote = function(post) {
-        debugger
         post.score++;
       }
 
@@ -69,5 +68,14 @@ angularControllers.controller('PostsCtrl', [
 
       $scope.body='';
     }
+
+    $scope.upVote = function(comment) {
+      comment.score++;
+    }
+
+    $scope.downVote = function(comment) {
+      comment.score--;
+    }
+
   }
 ])
