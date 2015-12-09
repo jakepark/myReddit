@@ -289,3 +289,26 @@ img {
 
   cursor: pointer;
 }
+
+
+.form-submit div{
+  background-color: #cee3f8;
+  border: 1px solid blue;
+  width: 500px;
+  margin: 10px 0 10px 0;
+}
+
+.form-submit p {
+  margin: 10px 10px 0 10px;
+}
+
+.form-input-title {
+  height: 50px;
+  width: 90%;
+  margin: 10px;
+}
+
+.form-input-url {
+  width: 90%;
+  margin: 10px;
+}
