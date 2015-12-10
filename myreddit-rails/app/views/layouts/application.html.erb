@@ -1,13 +1,129 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyredditRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-<%= yield %>
+<head>
+  <meta charset="utf-8">
+  <title>The Front Page of the Interweb</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+  <script src='public/vendor/angular-ui-router/angular-ui-router.min.js'></script>
+
+  <script src='js/app.js'></script>
+  <script src='js/controllers.js'></script>
+  <script src='js/services.js'></script>
+
+
+</head>
+<body ng-app="myreddit">
+
+  <ui-view></ui-view>
+
+  <script type="text/ng-template" id="/home.html">
+
+  <header class='header'>
+    <nav class='header-nav group'>
+      <a href="#/home"><h1 class='header-logo'>myreddit</h1></a>
+
+    </nav>
+  </header>
+
+  <main class='content group' >
+
+    <div class="content-main">
+
+      <div ng-repeat="post in posts | orderBy: '-score'">
+
+        <div class="link-element group">
+
+          <div class="link-score-display">
+            <span ng-click='upVote(post)' class='button-upvote'></span>
+              <span class='link-score'>{{post.score}}</span>
+            <span ng-click='downVote(post)' class='button-downvote'></span>
+          </div>
+
+          <div class="link-content">
+            <a ng-show='post.link' href="http://{{post.link}}">{{post.title}}</a>
+            <div ng-hide='post.link'>{{post.title}}</div>
+          </div>
+
+
+          <div class="link-submitted">
+            submitted {{post.date}} ago by {{post.author}}
+          </div>
+
+          <div class="link-comments">
+            <a href="#/posts/{{$index}}">{{post.comments.length}} comments</a>
+          </div>
+
+        </div>
+      </div>
+
+      <form ng-submit='addPost()' class='form-submit'>
+        <div>
+          <p >title</p>
+          <input class='form-input-title' type="text" ng-model='title' placeholder="type title"></input>
+        </div>
+        <div>
+          <p >url</p>
+          <input class='form-input-url' type="text" ng-model='link' placeholder="paste link"></input>
+        </div>
+        <button type='submit'>submit</button>
+      </form>
+
+    </div>
+  </main>
+
+  </script>
+
+  <script type="text/ng-template" id="/posts.html">
+  <header class='header'>
+    <nav class='header-nav group'>
+      <a href="#/home"><h1 class='header-logo'>myreddit</h1></a>
+
+    </nav>
+  </header>
+
+    <main class='content group' >
+
+      <div class="page-header">
+        <a ng-show='post.link' href="{{post.link}}">{{post.title}}</a>
+        <span ng-hide='post.link'>{{post.title}}</span>
+      </div>
+
+      <div class="page-comments group" ng-repeat="comment in post.comments | orderBy: '-score'">
+        <div class="link-score-display">
+          <span ng-click='upVote(comment)' class='button-upvote'></span>
+          <span ng-click='downVote(comment)' class='button-downvote'></span>
+        </div>
+
+        <div class="comment-title">
+          <span class='comment-author'> {{comment.author}} </span>
+          <span class='comment-score'> [{{comment.score}}] </span>
+
+        </div>
+
+        <div class='comment-body'>
+          {{comment.body}}
+        </div>
+      </div>
+
+      <form ng-submit='addComment()'>
+        <h3>Add a new comment</h3>
+
+        <div class="comment-form">
+          <input type="text" ng-model="body" class="comment-form-input"
+            placeholder="Comment"></input>
+
+          <button type="submit">Comment</button>
+        </div>
+      </form>
+
+    </main>
+  </script>
 
 </body>
 </html>
