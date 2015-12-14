@@ -1,0 +1,314 @@
+/* --- RESET --- */
+
+/*html, body, header, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+form, fieldset, label, input, textarea,
+button, article, footer, small*/
+
+html, body, header, footer, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+article, small {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  background: transparent;
+
+}
+
+/* --- NEEDED FOR PHANTOMJS --- */
+
+html, body, header, nav, main,
+section, article, footer, small {
+  display: block;
+}
+
+/* --- ELEMENTS --- */
+
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- CLEARFIX --- */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* --- HEADER --- */
+
+.header {
+  border-bottom: 1px solid blue;
+  background-color: #cee3f8;
+  font-size: 24px;
+}
+
+.header a {
+
+}
+
+.header-nav {
+  margin: 0 auto;
+  width: 900px;
+
+}
+
+.header-logo {
+  float: left;
+  font-size: 36px;
+  margin: 15px 0 0 0;
+}
+
+.header-list {
+
+}
+
+.header-list > li {
+
+}
+
+.badge {
+
+}
+
+/* --- CONTENT --- */
+
+.content {
+  margin: 0 auto;
+  width: 900px;
+}
+
+.content-sidebar {
+
+}
+
+.content-main {
+  margin: 10px;
+}
+
+.content-header {
+
+}
+
+/* --- SIDEBAR --- */
+
+.profile-picture {
+
+}
+
+.online {
+
+}
+
+.profile-info {
+
+}
+
+.profile-info > h2 {
+
+}
+
+.profile-info > p {
+
+}
+
+.profile-nav {
+
+}
+
+.profile-nav > li {
+
+}
+
+.profile-nav > li:first-child {
+
+}
+
+.profile-nav a {
+
+}
+
+/* --- THUMB --- */
+
+.thumb {
+
+}
+
+/* --- FORM --- */
+
+.form {
+
+}
+
+.form-thumb {
+
+}
+
+.form-fieldset {
+
+}
+
+.input {
+
+}
+
+.input > label {
+
+}
+
+.input > input,
+.input > textarea {
+
+}
+
+.input > input {
+
+}
+
+.input > textarea {
+
+}
+
+.submit {
+
+}
+
+.submit > button {
+
+}
+
+/* --- POSTS --- */
+
+.posts {
+
+}
+
+.post {
+
+}
+
+.post-thumb {
+
+}
+
+.post-body {
+
+}
+
+.post-body > h2 {
+
+}
+
+.post-body > p {
+
+}
+
+/* --- FOOTER --- */
+
+.footer {
+
+}
+
+.footer-copy {
+
+}
+
+.footer-links {
+
+}
+
+.footer-links > li {
+
+}
+
+
+/* --- ICONS --- */
+
+.link-score-display {
+  width: 25px;
+  /*height: 50px;*/
+  float: left;
+  margin: 10px 0;
+}
+
+.link-score {
+
+  float: left;
+}
+
+.link-content {
+  text-transform: capitalize;
+  color: blue;
+}
+
+
+.comment-author {
+  color: blue;
+}
+
+.button-upvote:before {
+  content: "";
+  background-image: url('sprite-reddit.png');
+  background-position: -85px -865px;
+  background-repeat: no-repeat;
+
+  width: 15px;
+  height: 15px;
+  float: left;
+
+  cursor: pointer;
+}
+
+.button-downvote {
+  background-image: url('sprite-reddit.png');
+  background-position: -42px -865px;
+  background-repeat: no-repeat;
+
+  width: 15px;
+  height: 15px;
+  float: left;
+
+  cursor: pointer;
+}
+
+
+.form-submit div{
+  background-color: #cee3f8;
+  border: 1px solid blue;
+  width: 500px;
+  margin: 10px 0 10px 0;
+}
+
+.form-submit p {
+  margin: 10px 10px 0 10px;
+}
+
+.form-input-title {
+  height: 50px;
+  width: 90%;
+  margin: 10px;
+}
+
+.form-input-url {
+  width: 90%;
+  margin: 10px;
+}
