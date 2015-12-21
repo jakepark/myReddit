@@ -19,20 +19,10 @@ angularControllers.controller('MainCtrl', [
       $scope.addPost = function(){
 
         if (!$scope.title || $scope.title == '') { return ;}
-
-        $scope.posts.push({
-          author: "testuser",
-          date: 1,
+        posts.create({
           title: $scope.title,
           link: $scope.link,
-          score: 0,
-
-          comments: [
-            {author: 'alpha', body: 'comment1!', score: 0},
-            {author: 'bravo', body: 'comment2?', score: 0}
-          ]
-
-        });
+        })
         $scope.title='';
         $scope.link='';
       }
