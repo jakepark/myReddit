@@ -33,7 +33,7 @@ angularServices.factory('posts', [
   };
 
   o.downvote = function(post){
-    return $http.put('/posts/' + post.id + '/upvote.json')
+    return $http.put('/posts/' + post.id + '/downvote.json')
       .success(function(data){
         post.score -= 1;
       })
@@ -51,7 +51,7 @@ angularServices.factory('posts', [
   };
 
   o.downvoteComment = function(post, comment){
-    return $http.put('/posts/' + post.id + '/comments/' + comment.id + '/upvote.json')
+    return $http.put('/posts/' + post.id + '/comments/' + comment.id + '/downvote.json')
       .success(function(data){
         comment.score -= 1;
       })

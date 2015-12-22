@@ -18,7 +18,14 @@ class PostsController < ApplicationController
 
     respond_with post
   end
-  
+
+  def downvote
+    post = Post.find(params[:id])
+    post.decrement!(:score)
+
+    respond_with post
+  end
+
   private
   def post_params
     params.require(:post).permit(:link, :title)
