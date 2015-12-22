@@ -33,7 +33,12 @@ myreddit
         .state('posts', {
           url: '/posts/{id}',
           templateUrl: 'posts/_posts.html',
-          controller: 'PostsCtrl'
+          controller: 'PostsCtrl',
+          resolve: {
+            post: ['$stateParams', 'posts', function($stateParams, posts){
+              return posts.get($stateParams.id);
+            }]
+          }
         })
 
       $urlRouterProvider.otherwise('home');
