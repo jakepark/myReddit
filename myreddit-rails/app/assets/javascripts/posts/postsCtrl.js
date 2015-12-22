@@ -10,24 +10,26 @@ angularControllers.controller('PostsCtrl', [
     $scope.post = post;
 
     $scope.addComment = function(){
-      if($scope.body === '') {return ;}
+      if($scope.body === '') {return; }
 
-      $scope.post.comments.push({
+      posts.addComment(post.id, {
         body: $scope.body,
         author: 'user',
         score: 0
+      }).success(function(comment){
+        $scope.post.comments.push(comment);
       });
 
       $scope.body='';
-    }
+    };
 
     $scope.upVote = function(comment) {
-      comment.score++;
-    }
+      posts.upvoteComment(post, comment);
+    };
 
     $scope.downVote = function(comment) {
-      comment.score--;
-    }
+      posts.downvoteComment(post, comment);
+    };
 
   }
 ])

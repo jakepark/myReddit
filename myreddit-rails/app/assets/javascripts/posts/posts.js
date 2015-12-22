@@ -39,6 +39,24 @@ angularServices.factory('posts', [
       })
   };
 
+  o.addComment = function(id, comment){
+    return $http.post('/posts/' + id + '/comments.json', comment);
+  };
+
+  o.upvoteComment = function(post, comment){
+    return $http.put('/posts/' + post.id + '/comments/' + comment.id + '/upvote.json')
+      .success(function(data){
+        comment.score += 1;
+      })
+  };
+
+  o.downvoteComment = function(post, comment){
+    return $http.put('/posts/' + post.id + '/comments/' + comment.id + '/upvote.json')
+      .success(function(data){
+        comment.score -= 1;
+      })
+  };
+
   return o;
 
 }])

@@ -25,7 +25,7 @@ angularControllers.controller('MainCtrl', [
       }
 
       $scope.downVote = function(post) {
-        post.downvote(post);
+        posts.downvote(post);
       }
     }
 
