@@ -19,6 +19,20 @@ angularServices.factory('posts', [
     });
   }
 
+  o.upvote = function(post){
+    return $http.put('/posts/' + post.id + '/upvote.json')
+      .success(function(data){
+        post.score += 1;
+      })
+  };
+
+  o.downvote = function(post){
+    return $http.put('/posts/' + post.id + '/upvote.json')
+      .success(function(data){
+        post.score -= 1;
+      })
+  };
+
   return o;
 
 }])

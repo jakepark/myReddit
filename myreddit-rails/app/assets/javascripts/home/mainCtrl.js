@@ -21,11 +21,11 @@ angularControllers.controller('MainCtrl', [
       }
 
       $scope.upVote = function(post) {
-        post.score++;
+        posts.upvote(post);
       }
 
       $scope.downVote = function(post) {
-        post.score--;
+        post.downvote(post);
       }
     }
 
