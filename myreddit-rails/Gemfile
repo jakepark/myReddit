@@ -20,6 +20,9 @@ gem 'angular-rails-templates'
 # $http csrf token
 gem 'angular_rails_csrf'
 
+#user auth
+gem 'devise', '~> 3.5.3'
+
 gem 'sprockets', '2.12.3'
 
 # Use ActiveModel has_secure_password
