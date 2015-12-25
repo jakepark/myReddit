@@ -5,7 +5,8 @@
 var myreddit = angular.module('myreddit', [
   'ui.router',
   'angularControllers',
-  'angularServices'
+  'angularServices',
+  'Devise'
 ]);
 
 
