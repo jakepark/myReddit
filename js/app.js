@@ -27,7 +27,19 @@ myreddit
           url: '/posts/{id}',
           templateUrl: '/posts.html',
           controller: 'PostsCtrl'
+        });
+
+      $stateProvider
+        .state('login', {
+          url: '/login',
+          templateUrl: 'auth/_login.html',
+          controller: 'AuthCtrl'
         })
+        .state('register', {
+          url: '/register',
+          templateUrl: 'auth/_register.html',
+          controller: 'AuthCtrl'
+        });
 
       $urlRouterProvider.otherwise('home');
     }
