@@ -1,6 +1,6 @@
 'use strict';
 
-var angularControllers = angular.module('angularControllers', [])
+var angularControllers = angular.module('angularControllers')
 
 angularControllers.controller('MainCtrl', [
     '$scope',

@@ -9,6 +9,8 @@ var myreddit = angular.module('myreddit', [
   'angularServices'
 ]);
 
+var angularControllers = angular.module('angularControllers', [])
+var angularServices = angular.module('angularServices', []);
 
 myreddit
   .config([

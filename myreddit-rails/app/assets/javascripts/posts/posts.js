@@ -1,4 +1,4 @@
-var angularServices = angular.module('angularServices', []);
+var angularServices = angular.module('angularServices');
 
 angularServices.factory('posts', [
   '$http',
