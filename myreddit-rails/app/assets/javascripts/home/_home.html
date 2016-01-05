@@ -27,7 +27,7 @@
 
 
           <div class="link-submitted">
-            submitted {{post.date}} ago by {{post.author}}
+            submitted by <a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a>
           </div>
 
           <div class="link-comments">
