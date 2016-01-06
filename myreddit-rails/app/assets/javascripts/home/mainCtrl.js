@@ -27,6 +27,8 @@ angularControllers.controller('MainCtrl', [
       $scope.downVote = function(post) {
         posts.downvote(post);
       }
+
+      $scope.loggedIn = false;
     }
 
   ]);

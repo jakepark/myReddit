@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <form ng-submit='addPost()' class='form-submit'>
+      <form ng-submit='addPost()' class='form-submit' ng-if='loggedIn'>
         <div>
           <p >title</p>
           <input class='form-input-title' type="text" ng-model='title' placeholder="type title"></input>

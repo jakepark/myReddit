@@ -9,6 +9,7 @@ angularControllers.controller('AuthCtrl', [
     function($scope, $state, Auth) {
       $scope.login = function(){
         Auth.login($scope.user).then(function(){
+          // $scope.loggedIn = true;
           $state.go('home');
         });
       };
