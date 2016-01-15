@@ -4,6 +4,7 @@
 
 var myreddit = angular.module('myreddit', [
   'ui.router',
+
   'templates',
   'angularControllers',
   'angularServices',
